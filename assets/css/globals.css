@@ -48,6 +48,8 @@
     font-size: 0.875rem;
     line-height: 1.25rem;
 
+    max-width: 40rem;
+
     color: hsl(var(--muted-foreground));
   }
 }
@@ -55,4 +57,21 @@
 form {
   display: grid;
   gap: 1rem;
+}
+
+.container {
+  max-width: 80rem;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+.text-2xl {
+  font-size: 1.5rem;
+  line-height: 2rem;
+}
+
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
