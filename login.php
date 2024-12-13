@@ -42,11 +42,11 @@ require_once ROOT_DIR . 'includes/partials/error.php';
         $identifiant = $_POST['identifiant'];
         $password = $_POST['password'];
 
-        $query = $db->prepare("SELECT * FROM Entraineur WHERE Identifiant = ? AND MotDePasse = ?");
+        $query = $db->prepare("SELECT * FROM Entraineur WHERE Identifiant = ?");
         if ($query == false) {
           htmlErrorMessage("Erreur lors de la préparation de la requête");
         } else {
-          $res = $query->execute([$identifiant, $password]);
+          $res = $query->execute([$identifiant]);
           if ($res == false) {
             htmlErrorMessage("Erreur lors de l'exécution de la requête");
           }
@@ -56,11 +56,15 @@ require_once ROOT_DIR . 'includes/partials/error.php';
         if ($user == false) {
           htmlErrorMessage("Identifiants incorrects", "L'identifiant ou le mot de passe est incorrect");
         } else {
-          // On stocke l'identifiant de l'utilisateur dans la session
-          $_SESSION['identifiant'] = $user['Identifiant'];
-
-          // On redirige l'utilisateur vers la page d'accueil
-          header('Location: ' . ROOT_DIR . 'index.php');
+          if (password_verify($password, $user['motDePasse'])) {
+            // On stocke l'identifiant de l'utilisateur dans la session
+            $_SESSION['identifiant'] = $user['Identifiant'];
+  
+            // On redirige l'utilisateur vers la page d'accueil
+            header('Location: ' . ROOT_DIR . 'index.php');
+          } else {
+            htmlErrorMessage("Identifiants incorrects", "L'identifiant ou le mot de passe est incorrect");
+          }
         }
       }
       ?>
