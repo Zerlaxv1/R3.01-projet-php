@@ -1,8 +1,11 @@
 <?php
-session_status();
 
 define("ROOT_DIR", "");
 require_once ROOT_DIR . 'includes/database.php';
+require_once ROOT_DIR . 'includes/functions.php';
+
+// On redirige l'utilisateur s'il est déjà connecté
+redirect_logged();
 
 ?>
 

@@ -1,14 +1,13 @@
 <?php
-session_start();
 
 define("ROOT_DIR", "");
 require_once ROOT_DIR . 'includes/database.php';
 
 require_once ROOT_DIR . 'includes/partials/error.php';
+require_once ROOT_DIR . 'includes/functions.php';
 
-if (isset($_SESSION['identifiant'])) {
-  header('Location: ' . ROOT_DIR . 'index.php');
-}
+// Redirige l'utilisateur s'il est déjà connecté
+redirect_unlogged();
 
 ?>
 
