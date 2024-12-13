@@ -1,0 +1,1 @@
+insert into Entraineur values (1, 'demo', '$2y$10$gVlQaQwR6WdCzdTLSaxhUuKDOZrfBr3O2BcXWEEBqT2J9Bma0ljLG');
