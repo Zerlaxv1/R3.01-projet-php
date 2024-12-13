@@ -1,10 +1,10 @@
 <header>
   <div class="container">
     <nav>
-      <a href="index.php" class="uk-button uk-button-ghost">
+      <a href="/index.php" class="uk-button uk-button-ghost">
         Accueil
       </a>
-      <a href="joueurs.php" class="uk-button uk-button-ghost">
+      <a href="/joueurs" class="uk-button uk-button-ghost">
         Joueurs
       </a>
       <a href="equipes.php" class="uk-button uk-button-ghost">
