@@ -63,7 +63,7 @@ redirect_unlogged();
           if (password_verify($password, $user['motDePasse'])) {
             // On stocke l'identifiant de l'utilisateur dans la session
             $_SESSION['identifiant'] = $user['Identifiant'];
-  
+
             // On redirige l'utilisateur vers la page d'accueil
             header('Location: ' . ROOT_DIR . 'index.php');
           } else {
