@@ -1,10 +1,15 @@
 <?php
-session_status();
+session_start();
 
 define("ROOT_DIR", "");
 require_once ROOT_DIR . 'includes/database.php';
 
 require_once ROOT_DIR . 'includes/partials/error.php';
+
+if (isset($_SESSION['identifiant'])) {
+  header('Location: ' . ROOT_DIR . 'index.php');
+}
+
 ?>
 
 <!DOCTYPE html>
