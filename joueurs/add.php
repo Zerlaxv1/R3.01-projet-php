@@ -14,7 +14,8 @@ if (
     isset($_POST['Taille']) && !empty($_POST['Taille']) &&
     isset($_POST['Poids']) && !empty($_POST['Poids']) &&
     isset($_POST['Equipe']) && !empty($_POST['Equipe']) &&
-    isset($_POST['Status']) && !empty($_POST['Status'])
+    isset($_POST['Status']) && !empty($_POST['Status']) &&
+    isset($_POST['License']) && !empty($_POST['License'])
 ) {
     $Nom = $_POST['Nom'];
     $Prenom = $_POST['Prenom'];
@@ -24,12 +25,13 @@ if (
     $Poids = $_POST['Poids'];
     $Equipe = $_POST['Equipe'];
     $Status = $_POST['Status'];
+    $License = $_POST['License'];
 
-    $query = $db->prepare("INSERT INTO Joueur (Nom, Prenom, DateDeNaissance, Poste, Taille, Poids, EquipeID, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $query = $db->prepare("INSERT INTO Joueur (Nom, Prenom, DateDeNaissance, Poste, Taille, Poids, EquipeID, Status, License) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)");
     if ($query == false) {
         htmlErrorMessage("Erreur lors de la préparation de la requête");
     } else {
-        $res = $query->execute([$Nom, $Prenom, $DateNaissance, $Poste, $Taille, $Poids, $Equipe, $Status]);
+        $res = $query->execute([$Nom, $Prenom, $DateNaissance, $Poste, $Taille, $Poids, $Equipe, $Status, $License]);
         if ($res == false) {
             htmlErrorMessage("Erreur lors de l'exécution de la requête");
         }
@@ -38,7 +40,7 @@ if (
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
@@ -81,6 +83,12 @@ if (
             type="text"
             name="Prenom"
             id="Prenom"
+            required>
+            <label for="License">License</label>
+        <input
+            type="number"
+            name="License"
+            id="License"
             required>
         <label for="DateNaissance">Date de Naissance</label>
         <input
