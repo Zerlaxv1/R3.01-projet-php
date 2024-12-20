@@ -44,6 +44,8 @@ $joueurs = $query->fetchAll();
     <link
         rel="stylesheet"
         href="https://unpkg.com/franken-ui@1.1.0/dist/css/core.min.css" />
+    <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/core.iife.js" type="module"></script>
+    <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/icon.iife.js" type="module"></script>
 
     <link
         rel="stylesheet"
@@ -70,12 +72,12 @@ $joueurs = $query->fetchAll();
             <div class="uk-flex uk-flex-between uk-margin">
                 <div>
                     <form method="POST" action="">
-                        <input class="uk-input" type="text" name="Recherche" placeholder="Rechercher" value="<?php echo isset($_POST['Recherche']) ? htmlspecialchars($_POST['Recherche']) : ''; ?>"/>
+                        <input class="uk-input" type="text" name="Recherche" placeholder="Rechercher" value="<?php echo isset($_POST['Recherche']) ? htmlspecialchars($_POST['Recherche']) : ''; ?>" />
                         <!-- <button type="submit" class="uk-button uk-button-default">Rechercher</button> -->
                     </form>
                 </div>
                 <div>
-                    <a class="uk-button uk-button-primary" href="add.php" >Ajouter</a>
+                    <a class="uk-button uk-button-primary" href="add.php">Ajouter</a>
                 </div>
             </div>
             <form method="POST" action="delete.php">
@@ -97,8 +99,8 @@ $joueurs = $query->fetchAll();
                             foreach ($joueurs as $joueur) {
                             ?>
                                 <tr>
-                                    <td>
-                                        <input class="uk-checkbox" type="checkbox" name="joueurs[]" value="<?php echo $joueur['id']; ?>" aria-label="Checkbox"/>
+                                    <td class="uk-table-shrink">
+                                        <input class="uk-checkbox" type="checkbox" name="joueurs[]" value="<?php echo $joueur['id']; ?>" aria-label="Checkbox" />
                                     </td>
 
                                     <td class="uk-text-nowrap">

@@ -7,7 +7,7 @@ require_once ROOT_DIR . 'includes/partials/error.php';
 redirect_logged();
 
 if (
-    isset($_POST['Nom']) && !empty($_POST['Nom']) && 
+    isset($_POST['Nom']) && !empty($_POST['Nom']) &&
     isset($_POST['Prenom']) && !empty($_POST['Prenom']) &&
     isset($_POST['DateNaissance']) && !empty($_POST['DateNaissance']) &&
     isset($_POST['Poste']) && !empty($_POST['Poste']) &&
@@ -50,6 +50,8 @@ if (
     <link
         rel="stylesheet"
         href="https://unpkg.com/franken-ui@1.1.0/dist/css/core.min.css" />
+    <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/core.iife.js" type="module"></script>
+    <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/icon.iife.js" type="module"></script>
 
     <link
         rel="stylesheet"
