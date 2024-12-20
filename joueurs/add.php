@@ -55,7 +55,7 @@ if (
 
     <link
         rel="stylesheet"
-        href="<?php echo ROOT_DIR . 'assets/css/joueurs.styles.css' ?>" />
+        href="<?php echo ROOT_DIR . 'assets/css/Ajout-joueurs.styles.css' ?>" />
 
     <link
         rel="stylesheet"
@@ -66,6 +66,7 @@ if (
     <header>
         <?php include ROOT_DIR . 'includes/partials/header.php'; ?>
     </header>
+    <a href="<?php echo ROOT_DIR . 'joueurs' ?>" class="uk-button">Retour</a>
     <form
         action="<?php echo ROOT_DIR . 'joueurs/add.php' ?>"
         method="POST">
