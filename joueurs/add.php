@@ -1,22 +1,20 @@
 <?php
 define("ROOT_DIR", "../");
 require_once ROOT_DIR . 'includes/database.php';
-
-
 require_once ROOT_DIR . 'includes/functions.php';
 require_once ROOT_DIR . 'includes/partials/error.php';
 
 redirect_logged();
 
 if (
-    isset($_POST['Nom']) & !empty($_POST['Nom']) & 
-    isset($_POST['Prenom']) & !empty($_POST['Prenom']) &
-    isset($_POST['DateNaissance']) & !empty($_POST['DateNaissance']) &
-    isset($_POST['Poste']) & !empty($_POST['Poste']) &
-    isset($_POST['Taille']) & !empty($_POST['Taille']) &
-    isset($_POST['Poids']) & !empty($_POST['Poids']) &
-    isset($_POST['Equipe']) & !empty($_POST['Equipe']) &
-    isset($_POST['Status']) & !empty($_POST['Status'])
+    isset($_POST['Nom']) && !empty($_POST['Nom']) && 
+    isset($_POST['Prenom']) && !empty($_POST['Prenom']) &&
+    isset($_POST['DateNaissance']) && !empty($_POST['DateNaissance']) &&
+    isset($_POST['Poste']) && !empty($_POST['Poste']) &&
+    isset($_POST['Taille']) && !empty($_POST['Taille']) &&
+    isset($_POST['Poids']) && !empty($_POST['Poids']) &&
+    isset($_POST['Equipe']) && !empty($_POST['Equipe']) &&
+    isset($_POST['Status']) && !empty($_POST['Status'])
 ) {
     $Nom = $_POST['Nom'];
     $Prenom = $_POST['Prenom'];
@@ -27,18 +25,17 @@ if (
     $Equipe = $_POST['Equipe'];
     $Status = $_POST['Status'];
 
-    $query = $db->prepare("INSERT INTO Joueur (Nom, Prenom, DateDeNaissance, Poste, Taille, Poids, Equipe, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
+    $query = $db->prepare("INSERT INTO Joueur (Nom, Prenom, DateDeNaissance, Poste, Taille, Poids, EquipeID, Status) VALUES (?, ?, ?, ?, ?, ?, ?, ?)");
     if ($query == false) {
         htmlErrorMessage("Erreur lors de la préparation de la requête");
     } else {
-        $res = $query->execute([$Nom, $Prenom, $DateNaissance, $Poste, $Numero]);
+        $res = $query->execute([$Nom, $Prenom, $DateNaissance, $Poste, $Taille, $Poids, $Equipe, $Status]);
         if ($res == false) {
             htmlErrorMessage("Erreur lors de l'exécution de la requête");
         }
     }
 }
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -102,27 +99,27 @@ if (
             name="Poids"
             id="Poids"
             required>
-            <!-- equipe dropdown w sql function to fetch all equipe name, with associated id -->
-            <label for="Equipe">Equipe</label>
-        <input
-            type=""
-            name="Equipe"
-            id="Equipe"
-            required>
-            <!-- same for status -->
-            <label for="Status">Status</label>
-        <input
-            type="text"
-            name="Status"
-            id="Status"
-            required>
-            <!-- same for poste -->
+        <label for="Equipe">Equipe</label>
+        <select name="Equipe" id="Equipe" required>
+            <option value="1">Equipe 1</option>
+            <option value="2">Equipe 2</option>
+            <option value="3">Equipe 3</option>
+            <option value="4">Equipe 4</option>
+        </select>
+        <label for="Status">Status</label>
+        <select name="Status" id="Status" required>
+            <option value="Actif">Actif</option>
+            <option value="Blessé">Blessé</option>
+            <option value="Suspendu">Suspendu</option>
+            <option value="Absent">Absent</option>
+        </select>
         <label for="Poste">Poste</label>
-        <input
-            type="text"
-            name="Poste"
-            id="Poste"
-            required>
+        <select name="Poste" id="Poste" required>
+            <option value="Pillier">Pillier</option>
+            <option value="Talonneur">Talonneur</option>
+            <option value="Demi">Demi</option>
+            <option value="Trois-quart">Trois-quart</option>
+        </select>
         <button type="submit">Ajouter</button>
 </body>
 
