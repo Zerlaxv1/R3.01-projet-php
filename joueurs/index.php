@@ -70,7 +70,7 @@ $joueurs = $query->fetchAll();
             <div class="uk-flex uk-flex-between uk-margin">
                 <div>
                     <form method="POST" action="">
-                        <input class="uk-input" type="text" name="Recherche" placeholder="Rechercher" />
+                        <input class="uk-input" type="text" name="Recherche" placeholder="Rechercher" value="<?php echo isset($_POST['Recherche']) ? htmlspecialchars($_POST['Recherche']) : ''; ?>"/>
                         <!-- <button type="submit" class="uk-button uk-button-default">Rechercher</button> -->
                     </form>
                 </div>
