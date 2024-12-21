@@ -67,8 +67,8 @@ $joueurs = $query->fetchAll();
     </header>
 
     <main>
-        <div class="uk-overflow-auto">
-            <h1 class="uk-heading-bullet">Joueurs</h1>
+        <div class="uk-overflow-auto container">
+            <h1 class="headings">Joueurs</h1>
             <div class="uk-flex uk-flex-between uk-margin">
                 <div>
                     <form method="POST" action="">
