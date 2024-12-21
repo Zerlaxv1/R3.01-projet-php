@@ -62,7 +62,7 @@ if (isset($_POST["EDIT"]) && $_POST["EDIT"] == "true") {
         <?php include ROOT_DIR . 'includes/partials/header.php'; ?>
     </header>
 
-    <main>
+    <main class="uk-overflow-auto container">
         <!-- display all the informations abt the joueur, as disabeled editable text, so with a click we can enable editing -->
         <form action="<?php echo ROOT_DIR . 'joueurs/update.php' ?>" method="POST">
             <input type="hidden" name="ID" value="<?php echo $joueur['id'] ?>">
