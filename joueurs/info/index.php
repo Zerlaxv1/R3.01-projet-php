@@ -62,55 +62,66 @@ if (isset($_POST["EDIT"]) && $_POST["EDIT"] == "true") {
         <?php include ROOT_DIR . 'includes/partials/header.php'; ?>
     </header>
 
-    <main class="uk-overflow-auto container">
-        <!-- display all the informations abt the joueur, as disabeled editable text, so with a click we can enable editing -->
-        <form action="<?php echo ROOT_DIR . 'joueurs/update.php' ?>" method="POST">
-            <input type="hidden" name="ID" value="<?php echo $joueur['id'] ?>">
-            <div class="form-group">
-                <label for="Nom">Nom</label>
-                <input type="text" name="Nom" id="Nom" value="<?php echo $joueur['Nom'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+    <main class="uk-padding">
+        <div class="uk-overflow-auto container">
+            <div class="headings uk-flex uk-flex-between uk-margin">
+                <h1 class="uk-heading">Informations sur le joueur</h1> 
+                <div class="uk-flex uk-flex">
+                    <form action="" method="POST">
+                        <input type="hidden" name="EDIT" value="true">
+                        <input type="submit" value="Modifier" class="uk-button uk-button-primary" <?php echo $edit ? 'disabled' : '' ?>>
+                    </form>
+                    <a href="<?php echo ROOT_DIR . 'joueurs' ?>" class="uk-button uk-button-default">Retour</a>
+                </div>
             </div>
-            <div class="form-group">
-                <label for="Prenom">Prenom</label>
-                <input type="text" name="Prenom" id="Prenom" value="<?php echo $joueur['Prenom'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="DateNaissance">Date de naissance</label>
-                <input type="date" name="DateNaissance" id="DateNaissance" value="<?php echo $joueur['DateDeNaissance'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="License">License</label>
-                <input type="number" name="License" id="License" value="<?php echo $joueur['License'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="Equipe">Equipe</label>
-                <input type="text" name="Equipe" id="Equipe" value="<?php echo $joueur['EquipeID'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="Taille">Taille</label>
-                <input type="number" name="Taille" id="Taille" value="<?php echo $joueur['Taille'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="Poids">Poids</label>
-                <input type="text" name="Poids" id="Poids" value="<?php echo $joueur['Poids'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="Poste">Poste</label>
-                <input type="text" name="Poste" id="Poste" value="<?php echo $joueur['Poste'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="Note">Note</label>
-                <input type="text" name="Note" id="Note" value="<?php echo $joueur['Commentaire'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-            <div class="form-group">
-                <label for="Status">Status</label>
-                <input type="text" name="Status" id="Status" value="<?php echo $joueur['Status'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
-            </div>
-        </form>
-        <form>
-            <input type="hidden" name="EDIT" value="true">
-            <button type="submit" class="uk-button uk-button-primary">Modifier</button>
-        </form>
+            <!-- display all the informations abt the joueur, as disabeled editable text, so with a click we can enable editing -->
+            <form action="<?php echo ROOT_DIR . 'joueurs/update.php' ?>" method="POST">
+                <input type="hidden" name="ID" value="<?php echo $joueur['id'] ?>">
+                <div class="form-group">
+                    <label for="Nom">Nom</label>
+                    <input type="text" name="Nom" id="Nom" value="<?php echo $joueur['Nom'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="Prenom">Prenom</label>
+                    <input type="text" name="Prenom" id="Prenom" value="<?php echo $joueur['Prenom'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="DateNaissance">Date de naissance</label>
+                    <input type="date" name="DateNaissance" id="DateNaissance" value="<?php echo $joueur['DateDeNaissance'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="License">License</label>
+                    <input type="number" name="License" id="License" value="<?php echo $joueur['License'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="Equipe">Equipe</label>
+                    <input type="text" name="Equipe" id="Equipe" value="<?php echo $joueur['EquipeID'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="Taille">Taille</label>
+                    <input type="number" name="Taille" id="Taille" value="<?php echo $joueur['Taille'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="Poids">Poids</label>
+                    <input type="text" name="Poids" id="Poids" value="<?php echo $joueur['Poids'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="Poste">Poste</label>
+                    <input type="text" name="Poste" id="Poste" value="<?php echo $joueur['Poste'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="Note">Note</label>
+                    <input type="text" name="Note" id="Note" value="<?php echo $joueur['Commentaire'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <div class="form-group">
+                    <label for="Status">Status</label>
+                    <input type="text" name="Status" id="Status" value="<?php echo $joueur['Status'] ?>" <?php echo $edit ? '' : 'disabled' ?>>
+                </div>
+                <?php if ($edit): ?>
+                <button type="submit" class="uk-button uk-button-primary">Valider</button>
+                <?php endif; ?>
+            </form>
+        </div>
     </main>
 
     <footer>
