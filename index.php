@@ -10,7 +10,7 @@ redirect_logged();
 ?>
 
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
   <meta charset="UTF-8">
@@ -27,7 +27,7 @@ redirect_logged();
 
   <link
     rel="stylesheet"
-    href="<?php echo ROOT_DIR . 'assets/css/dashboard.styles.css' ?>" />
+    href="<?php echo ROOT_DIR . 'assets/css/accueil.styles.css' ?>" />
 
   <link
     rel="stylesheet"
