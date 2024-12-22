@@ -59,9 +59,24 @@ if (isset($_POST["EDIT"]) && $_POST["EDIT"] == "true") {
     <link
         rel="stylesheet"
         href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=lock" />
+    <script>
+        const htmlElement = document.documentElement;
+
+        if (
+            localStorage.getItem("mode") === "dark" ||
+            (!("mode" in localStorage) &&
+                window.matchMedia("(prefers-color-scheme: dark)").matches)
+        ) {
+            htmlElement.classList.add("dark");
+        } else {
+            htmlElement.classList.remove("dark");
+        }
+
+        htmlElement.classList.add(localStorage.getItem("theme") || "uk-theme-zinc");
+    </script>
 </head>
 
-<body>
+<body class="bg-background text-foreground">
     <header>
         <?php include ROOT_DIR . 'includes/partials/header.php'; ?>
     </header>

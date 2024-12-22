@@ -29,6 +29,15 @@
         </div>
 
         <div class="uk-navbar-right">
+          <button class="uk-icon-button uk-icon-button-small uk-icon-button-outline">
+            <uk-icon icon="palette" uk-cloak></uk-icon>
+          </button>
+          <div
+            class="uk-card uk-card-body uk-card-default uk-drop uk-width-large"
+            uk-drop="mode: click; offset: 8">
+            <div class="uk-card-title uk-margin-medium-bottom">Customize</div>
+            <uk-theme-switcher></uk-theme-switcher>
+          </div>
           <ul class="uk-navbar-nav">
             <li>
               <a href="/loggout.php">
