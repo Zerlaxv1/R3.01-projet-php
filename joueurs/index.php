@@ -8,8 +8,8 @@ require_once ROOT_DIR . 'includes/partials/error.php';
 
 redirect_logged();
 
-if (isset($_POST['Recherche']) & !empty($_POST['Recherche'])) {
-    $recherche = $_POST['Recherche'];
+if (isset($_GET['Recherche']) & !empty($_GET['Recherche'])) {
+    $recherche = $_GET['Recherche'];
     $query = $db->prepare("SELECT * FROM Joueur WHERE Nom LIKE ? OR Prenom LIKE ?");
     if ($query == false) {
         htmlErrorMessage("Erreur lors de la préparation de la requête");
@@ -77,9 +77,8 @@ $joueurs = $query->fetchAll();
             <h1>Joueurs</h1>
             <div class="uk-flex uk-flex-between uk-margin">
                 <div>
-                    <form method="POST" action="">
-                        <input class="uk-input" type="text" name="Recherche" placeholder="Rechercher" value="<?php echo isset($_POST['Recherche']) ? htmlspecialchars($_POST['Recherche']) : ''; ?>" />
-                        <!-- <button type="submit" class="uk-button uk-button-default">Rechercher</button> -->
+                    <form method="GET" action="">
+                        <input class="uk-input" type="text" name="Recherche" placeholder="Rechercher" value="<?php echo isset($_GET['Recherche']) ? htmlspecialchars($_GET['Recherche']) : ''; ?>" />
                     </form>
                 </div>
                 <div>
