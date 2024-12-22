@@ -65,7 +65,7 @@ redirect_unlogged();
             $_SESSION['identifiant'] = $user['Identifiant'];
 
             // On redirige l'utilisateur vers la page d'accueil
-            header('Location: ' . ROOT_DIR . 'index.php');
+            header('Location: ' . ROOT_DIR . '/');
           } else {
             htmlErrorMessage("Identifiants incorrects", "L'identifiant ou le mot de passe est incorrect");
           }
