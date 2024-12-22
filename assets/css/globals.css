@@ -75,3 +75,8 @@ form {
   font-size: 0.875rem;
   line-height: 1.25rem;
 }
+
+main {
+  padding: 2rem;
+  padding-top: 1.25rem;
+}

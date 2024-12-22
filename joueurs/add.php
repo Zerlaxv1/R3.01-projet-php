@@ -71,81 +71,83 @@ if (
         <?php include ROOT_DIR . 'includes/partials/header.php'; ?>
     </header>
 
-    <main class="uk-overflow-auto container uk-margin-top">
+    <main class="uk-overflow-auto">
+        <div class="container">
 
-        <div class="headings uk-flex uk-flex-between uk-margin">
+            <div class="headings uk-flex uk-flex-between uk-margin">
 
-            <h1 class="uk-heading">Ajouter un joueur</h1>
-            <a href="<?php echo ROOT_DIR . 'joueurs' ?>" class="uk-button uk-button-default">Retour</a>
+                <h1 class="uk-heading">Ajouter un joueur</h1>
+                <a href="<?php echo ROOT_DIR . 'joueurs' ?>" class="uk-button uk-button-default">Retour</a>
+            </div>
+
+            <form
+                action="<?php echo ROOT_DIR . 'joueurs/add.php' ?>"
+                method="POST">
+                <fieldset class="uk-fieldset">
+                    <div class="uk-margin">
+                        <label for="Nom">Nom</label>
+                        <input class="uk-input" type="text" name="Nom" id="Nom" required>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="Prenom">Prenom</label>
+                        <input class="uk-input" type="text" name="Prenom" id="Prenom" required>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="License">License</label>
+                        <input class="uk-input" type="number" name="License" id="License" required>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="DateNaissance">Date de Naissance</label>
+                        <input class="uk-input" type="date" name="DateNaissance" id="DateNaissance" required>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="Taille">Taille</label>
+                        <input class="uk-input" type="number" name="Taille" id="Taille" required>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="Poids">Poids</label>
+                        <input class="uk-input" type="number" name="Poids" id="Poids" required>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="Equipe">Equipe</label>
+                        <select class="uk-select" name="Equipe" id="Equipe" required>
+                            <option value="1">Equipe 1</option>
+                            <option value="2">Equipe 2</option>
+                            <option value="3">Equipe 3</option>
+                            <option value="4">Equipe 4</option>
+                        </select>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="Status">Status</label>
+                        <select class="uk-select" name="Status" id="Status" required>
+                            <option value="Actif">Actif</option>
+                            <option value="Blessé">Blessé</option>
+                            <option value="Suspendu">Suspendu</option>
+                            <option value="Absent">Absent</option>
+                        </select>
+                    </div>
+
+                    <div class="uk-margin">
+                        <label for="Poste">Poste</label>
+                        <select class="uk-select" name="Poste" id="Poste" required>
+                            <option value="Pillier">Pillier</option>
+                            <option value="Talonneur">Talonneur</option>
+                            <option value="Demi">Demi</option>
+                            <option value="Trois-quart">Trois-quart</option>
+                        </select>
+                    </div>
+
+                    <button class="uk-button uk-button-primary" type="submit">Ajouter</button>
+                </fieldset>
+            </form>
         </div>
-
-        <form
-            action="<?php echo ROOT_DIR . 'joueurs/add.php' ?>"
-            method="POST">
-            <fieldset class="uk-fieldset">
-                <div class="uk-margin">
-                    <label for="Nom">Nom</label>
-                    <input class="uk-input" type="text" name="Nom" id="Nom" required>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="Prenom">Prenom</label>
-                    <input class="uk-input" type="text" name="Prenom" id="Prenom" required>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="License">License</label>
-                    <input class="uk-input" type="number" name="License" id="License" required>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="DateNaissance">Date de Naissance</label>
-                    <input class="uk-input" type="date" name="DateNaissance" id="DateNaissance" required>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="Taille">Taille</label>
-                    <input class="uk-input" type="number" name="Taille" id="Taille" required>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="Poids">Poids</label>
-                    <input class="uk-input" type="number" name="Poids" id="Poids" required>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="Equipe">Equipe</label>
-                    <select class="uk-select" name="Equipe" id="Equipe" required>
-                        <option value="1">Equipe 1</option>
-                        <option value="2">Equipe 2</option>
-                        <option value="3">Equipe 3</option>
-                        <option value="4">Equipe 4</option>
-                    </select>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="Status">Status</label>
-                    <select class="uk-select" name="Status" id="Status" required>
-                        <option value="Actif">Actif</option>
-                        <option value="Blessé">Blessé</option>
-                        <option value="Suspendu">Suspendu</option>
-                        <option value="Absent">Absent</option>
-                    </select>
-                </div>
-
-                <div class="uk-margin">
-                    <label for="Poste">Poste</label>
-                    <select class="uk-select" name="Poste" id="Poste" required>
-                        <option value="Pillier">Pillier</option>
-                        <option value="Talonneur">Talonneur</option>
-                        <option value="Demi">Demi</option>
-                        <option value="Trois-quart">Trois-quart</option>
-                    </select>
-                </div>
-
-                <button class="uk-button uk-button-primary" type="submit">Ajouter</button>
-            </fieldset>
-        </form>
     </main>
 
     <footer>
