@@ -89,6 +89,9 @@ redirect_logged();
     </div>
 
   </main>
+
+  <?php include ROOT_DIR . 'includes/partials/footer.php'; ?>
+
 </body>
 
 </html>
