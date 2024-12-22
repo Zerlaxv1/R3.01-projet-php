@@ -107,18 +107,18 @@ $joueurs = $query->fetchAll();
                                     <td class="uk-table-shrink">
                                         <input class="uk-checkbox" type="checkbox" name="joueurs[]" value="<?php echo $joueur['id']; ?>" aria-label="Checkbox" />
                                     </td>
-                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/?id=<?php echo $joueur['id']; ?>'">
                                         <?php echo strtoupper($joueur["Nom"]) . " " . $joueur["Prenom"] ?>
                                     </td>
 
-                                    <td class="uk-text-truncate clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                    <td class="uk-text-truncate clickable" onclick="window.location.href='info/?id=<?php echo $joueur['id']; ?>'">
                                         <?php echo $joueur["Commentaire"] ?>
                                     </td>
 
-                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/?id=<?php echo $joueur['id']; ?>'">
                                         <?php echo $joueur["Status"] ?>
                                     </td>
-                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/?id=<?php echo $joueur['id']; ?>'">
                                         <?php echo $joueur["Poste"] ?>
                                     </td>
                                 </tr>
