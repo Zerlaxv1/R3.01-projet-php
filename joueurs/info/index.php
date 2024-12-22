@@ -55,6 +55,10 @@ if (isset($_POST["EDIT"]) && $_POST["EDIT"] == "true") {
     <link
         rel="stylesheet"
         href="<?php echo ROOT_DIR . 'assets/css/header.css' ?>" />
+
+    <link
+        rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200&icon_names=lock" />
 </head>
 
 <body>
@@ -65,11 +69,21 @@ if (isset($_POST["EDIT"]) && $_POST["EDIT"] == "true") {
     <main class="uk-overflow-auto">
         <div class="container">
             <div class="headings uk-flex uk-flex-between uk-margin">
-                <h1 class="uk-heading">Informations sur le joueur</h1> 
+                <h1 class="uk-heading">Informations sur le joueur</h1>
                 <div class="uk-flex uk-flex">
                     <form action="" method="POST">
                         <input type="hidden" name="EDIT" value="true">
-                        <input type="submit" value="Modifier" class="uk-button uk-button-primary" <?php echo $edit ? 'disabled' : '' ?>>
+                        <button type="submit" class="uk-button uk-button-primary" <?php echo $edit ? 'disabled' : '' ?>>
+                            <?php if ($edit): ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                    <path d="M240-640h360v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85h-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640Zm0 480h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM240-160v-400 400Z" />
+                                </svg>
+                            <?php else: ?>
+                                <svg xmlns="http://www.w3.org/2000/svg" height="24px" viewBox="0 -960 960 960" width="24px" fill="#e8eaed">
+                                    <path d="M240-80q-33 0-56.5-23.5T160-160v-400q0-33 23.5-56.5T240-640h40v-80q0-83 58.5-141.5T480-920q83 0 141.5 58.5T680-720v80h40q33 0 56.5 23.5T800-560v400q0 33-23.5 56.5T720-80H240Zm0-80h480v-400H240v400Zm240-120q33 0 56.5-23.5T560-360q0-33-23.5-56.5T480-440q-33 0-56.5 23.5T400-360q0 33 23.5 56.5T480-280ZM360-640h240v-80q0-50-35-85t-85-35q-50 0-85 35t-35 85v80ZM240-160v-400 400Z" />
+                                </svg>
+                            <?php endif; ?>
+                        </button>
                     </form>
                     <a href="<?php echo ROOT_DIR . 'joueurs' ?>" class="uk-button uk-button-default">Retour</a>
                 </div>
@@ -148,7 +162,7 @@ if (isset($_POST["EDIT"]) && $_POST["EDIT"] == "true") {
                     </div>
 
                     <?php if ($edit): ?>
-                    <button type="submit" class="uk-button uk-button-primary">Valider</button>
+                        <button type="submit" class="uk-button uk-button-primary">Valider</button>
                     <?php endif; ?>
                 </fieldset>
             </form>
