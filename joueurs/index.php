@@ -1,13 +1,13 @@
 <?php
+// Define constants and include required files
 define("ROOT_DIR", "../");
 require_once ROOT_DIR . 'includes/database.php';
-
-
 require_once ROOT_DIR . 'includes/functions.php';
 require_once ROOT_DIR . 'includes/partials/error.php';
 
 redirect_logged();
 
+// Handle search functionality
 if (isset($_GET['Recherche']) & !empty($_GET['Recherche'])) {
     $recherche = $_GET['Recherche'];
     $query = $db->prepare("SELECT * FROM Joueur WHERE Nom LIKE ? OR Prenom LIKE ?");
@@ -41,33 +41,18 @@ $joueurs = $query->fetchAll();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Joueurs</title>
 
-    <link
-        rel="stylesheet"
-        href="https://unpkg.com/franken-ui@1.1.0/dist/css/core.min.css" />
+    <!-- Include CSS and JS libraries -->
+    <link rel="stylesheet" href="https://unpkg.com/franken-ui@1.1.0/dist/css/core.min.css" />
     <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/core.iife.js" type="module"></script>
     <script src="https://unpkg.com/franken-ui@1.1.0/dist/js/icon.iife.js" type="module"></script>
 
-    <link
-        rel="stylesheet"
-        href="<?php echo ROOT_DIR . 'assets/css/globals.css' ?>" />
+    <link rel="stylesheet" href="<?php echo ROOT_DIR . 'assets/css/globals.css' ?>" />
+    <link rel="stylesheet" href="<?php echo ROOT_DIR . 'assets/css/joueurs.styles.css' ?>" />
+    <link rel="stylesheet" href="<?php echo ROOT_DIR . 'assets/css/header.css' ?>" />
 
-    <link
-        rel="stylesheet"
-        href="<?php echo ROOT_DIR . 'assets/css/joueurs.styles.css' ?>" />
-
-    <link
-        rel="stylesheet"
-        href="<?php echo ROOT_DIR . 'assets/css/header.css' ?>" />
-
-    <style>
-        .clickable {
-            cursor: pointer;
-        }
-    </style>
 </head>
 
 <body>
-
     <header>
         <?php include ROOT_DIR . 'includes/partials/header.php'; ?>
     </header>
@@ -95,7 +80,6 @@ $joueurs = $query->fetchAll();
                                 <th class="uk-table-expand">Note</th>
                                 <th class="uk-width-small">Status</th>
                                 <th class="uk-table-shrink uk-text-nowrap">Poste</th>
-
                             </tr>
                         </thead>
                         <tbody>
@@ -109,11 +93,9 @@ $joueurs = $query->fetchAll();
                                     <td class="uk-text-nowrap clickable" onclick="window.location.href='info/?id=<?php echo $joueur['id']; ?>'">
                                         <?php echo strtoupper($joueur["Nom"]) . " " . $joueur["Prenom"] ?>
                                     </td>
-
                                     <td class="uk-text-truncate clickable" onclick="window.location.href='info/?id=<?php echo $joueur['id']; ?>'">
                                         <?php echo $joueur["Commentaire"] ?>
                                     </td>
-
                                     <td class="uk-text-nowrap clickable" onclick="window.location.href='info/?id=<?php echo $joueur['id']; ?>'">
                                         <?php echo $joueur["Status"] ?>
                                     </td>
