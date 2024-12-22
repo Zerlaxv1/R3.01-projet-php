@@ -75,7 +75,7 @@ redirect_unlogged();
 
       <div>
         <label class="uk-form-label">Identifiant</label>
-        <input class="uk-input" name="identifiant" type="text" placeholder="Identifiant">
+        <input class="uk-input" name="identifiant" type="text" placeholder="Identifiant" autofocus>
       </div>
 
       <div>
