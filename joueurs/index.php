@@ -58,6 +58,12 @@ $joueurs = $query->fetchAll();
     <link
         rel="stylesheet"
         href="<?php echo ROOT_DIR . 'assets/css/header.css' ?>" />
+
+    <style>
+        .clickable {
+            cursor: pointer;
+        }
+    </style>
 </head>
 
 <body>
@@ -95,29 +101,26 @@ $joueurs = $query->fetchAll();
                         </thead>
                         <tbody>
                             <?php
-                            //for each row in the query result, display a table row
                             foreach ($joueurs as $joueur) {
                             ?>
                                 <tr>
                                     <td class="uk-table-shrink">
                                         <input class="uk-checkbox" type="checkbox" name="joueurs[]" value="<?php echo $joueur['id']; ?>" aria-label="Checkbox" />
                                     </td>
-                                    <a href="info.php?id=<?php echo $joueur['id']; ?>">
-                                        <td class="uk-text-nowrap" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
-                                            <?php echo strtoupper($joueur["Nom"]) . " " . $joueur["Prenom"] ?>
-                                        </td>
+                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                        <?php echo strtoupper($joueur["Nom"]) . " " . $joueur["Prenom"] ?>
+                                    </td>
 
-                                        <td class="uk-text-truncate" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
-                                            <?php echo $joueur["Commentaire"] ?>
-                                        </td>
+                                    <td class="uk-text-truncate clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                        <?php echo $joueur["Commentaire"] ?>
+                                    </td>
 
-                                        <td class="uk-text-nowrap" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
-                                            <?php echo $joueur["Status"] ?>
-                                        </td>
-                                        <td class="uk-text-nowrap" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
-                                            <?php echo $joueur["Poste"] ?>
-                                        </td>
-                                    </a>
+                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                        <?php echo $joueur["Status"] ?>
+                                    </td>
+                                    <td class="uk-text-nowrap clickable" onclick="window.location.href='info/index.php?id=<?php echo $joueur['id']; ?>'">
+                                        <?php echo $joueur["Poste"] ?>
+                                    </td>
                                 </tr>
                             <?php
                             }
