@@ -80,3 +80,12 @@ main {
   padding: 2rem;
   padding-top: 1.25rem;
 }
+
+.uk-checkbox:checked {
+  border-color: hsl(var(--primary));
+  background-color: hsl(var(--primary));
+}
+
+.clickable {
+  cursor: pointer;
+}
