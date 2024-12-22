@@ -70,14 +70,19 @@ if (
     <header>
         <?php include ROOT_DIR . 'includes/partials/header.php'; ?>
     </header>
-    <main class="uk-overflow-auto container">
-        <a href="<?php echo ROOT_DIR . 'joueurs' ?>" class="uk-button uk-button-default">Retour</a>
+
+    <main class="uk-overflow-auto container uk-margin-top">
+
+        <div class="headings uk-flex uk-flex-between uk-margin">
+
+            <h1 class="uk-heading">Ajouter un joueur</h1>
+            <a href="<?php echo ROOT_DIR . 'joueurs' ?>" class="uk-button uk-button-default">Retour</a>
+        </div>
+
         <form
             action="<?php echo ROOT_DIR . 'joueurs/add.php' ?>"
             method="POST">
             <fieldset class="uk-fieldset">
-                <legend class="uk-legend">Ajouter un joueur</legend>
-
                 <div class="uk-margin">
                     <label for="Nom">Nom</label>
                     <input class="uk-input" type="text" name="Nom" id="Nom" required>
