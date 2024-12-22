@@ -1,5 +1,5 @@
 <header>
-  <div class="container">
+  <div class="container uk-flex uk-flex-between">
     <nav>
       <a href="/" class="uk-button uk-button-ghost">
         Accueil
@@ -14,5 +14,9 @@
         Matchs
       </a>
     </nav>
+    <div>
+      <a href="/loggout.php" class="uk-button uk-button-danger">
+        Déconnexion
+      </a>
   </div>
 </header>
